@@ -1,0 +1,20 @@
+----
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: swiggy
+    template:
+      metadata:
+        labels:
+          app: swiggy
+      spec:
+        containers:
+          - name: cont-1
+            image: sunny557/z1
+            ports:
+              - containerPort: 3000
