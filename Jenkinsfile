@@ -15,11 +15,6 @@ pipeline {
                 cleanWs()
             }
         }
-        stage('checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/Kranthi9955/Zomato-project.git'
-            }
-        }
         stage("Sonarqube Analysis") {
             steps{
                 withSonarQubeEnv('sonar-server') {
@@ -55,8 +50,8 @@ pipeline {
                 script {
                     withDockerRegistry(credentialsId: 'docker-pass') {
                         sh 'docker build -t image1 .'
-                        sh "docker tag image1 sunny5577/loki:sunny557-z1"
-                        sh "docker push sunny5577/loki:sunny557-z1"
+                        sh "docker tag image1 sunny5577/loki:sunny55-z1"
+                        sh "docker push sunny5577/loki:sunny55-z1"
                     }
                 }
             }
@@ -68,7 +63,7 @@ pipeline {
         }
         stage ("Deploy to container") {
             steps {
-                sh 'docker run -d --name zomato -p 3000:3000 sunny5577/loki:sunny557-z1'
+                sh 'docker run -d --name zomato -p 3000:3000 sunny5577/loki:sunny55-z1'
             }
         }
     }
