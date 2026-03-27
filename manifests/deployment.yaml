@@ -15,6 +15,6 @@ spec:
       spec:
         containers:
           - name: cont-1
-            image: sunny557/z1
+            image: sunny5577/loki:sunny55-z1
             ports:
               - containerPort: 3000
