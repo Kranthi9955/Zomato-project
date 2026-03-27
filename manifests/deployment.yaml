@@ -12,9 +12,9 @@ spec:
     metadata:
       labels:
         app: swiggy
-      spec:
-        containers:
-          - name: cont-1
-            image: sunny5577/loki:sunny55-z1
-            ports:
-              - containerPort: 3000
+    spec:
+      containers:
+        - name: cont-1
+          image: sunny5577/loki:sunny55-z1
+          ports:
+            - containerPort: 3000
