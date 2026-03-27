@@ -8,10 +8,10 @@ spec:
   selector:
     matchLabels:
       app: swiggy
-    template:
-      metadata:
-        labels:
-          app: swiggy
+  template:
+    metadata:
+      labels:
+        app: swiggy
       spec:
         containers:
           - name: cont-1
